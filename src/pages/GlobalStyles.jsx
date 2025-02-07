@@ -21,7 +21,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   #root {
-    height: 100%;  /* React의 루트 요소도 100%로 설정 */
+    height: 100%;
   }
 `;
 
