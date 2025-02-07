@@ -141,4 +141,9 @@ export const Nav = styled.div`
   display: flex;
   flex-direction: row;
   gap: 49px;
+  width: 391px;
+  height: 81px;
+  flex-shrink: 0;
+  border-radius: 0px 0px 30px 30px;
+  background: #fff;
 `;
