@@ -17,7 +17,7 @@ export const Container = styled.div`
 
 export const Title = styled.div`
   position: relative; /* 툴팁 위치 기준 */
-  margin-top: 40px;
+  margin-top: 20px;
   display: flex;
   flex-direction: row;
   align-items: center;

@@ -2,7 +2,8 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import * as R from "../styles/StyledRM";
-import Dropdown from "./RecipeDrop"; // ✅ 공통 드롭다운 컴포넌트 가져오기
+import Dropdown from "./RecipeDrop";
+import TasteDropdown from "./TasteDrop"; // ✅ 공통 드롭다운 컴포넌트 가져오기
 // import axios from "axios";
 
 const RecipeMaker = () => {
@@ -11,12 +12,15 @@ const RecipeMaker = () => {
     useState("원하는 조리 시간을 선택하세요.");
   const [selectedLevel, setSelectedLevel] =
     useState("원하는 조리 난이도를 선택하세요.");
-  const [selectedTaste, setSelectedTaste] =
-    useState("원하는 맛 취향을 선택하세요.");
+  const [selectedTaste, setSelectedTaste] = useState("");
   const [selectedSpicy, setSelectedSpicy] =
     useState("매운 맛 정도를 선택하세요.");
 
   const navigate = useNavigate();
+
+  const gocustom = () => {
+    navigate(`/customrecipe`);
+  };
 
   const [isTooltipVisible, setIsTooltipVisible] = useState(false);
 
@@ -72,11 +76,18 @@ const RecipeMaker = () => {
             />
           </R.Level>
           <R.Taste>
-            <Dropdown
-              options={["달콤", "짭짤", "새콤", "고소"]}
+            <TasteDropdown
+              options={[
+                "단 맛",
+                "짠 맛",
+                "신 맛",
+                "감칠 맛",
+                "기름진 맛",
+                "담백한 맛",
+                "매운 맛",
+              ]}
               selected={selectedTaste}
               setSelected={setSelectedTaste}
-              multiple={true} // ✅ 중복 선택 허용
             />
           </R.Taste>
           <R.Spicy>
@@ -95,7 +106,7 @@ const RecipeMaker = () => {
             />
           </R.Spicy>
         </R.Box>
-        <R.Go>
+        <R.Go onClick={gocustom}>
           <div id="go">커스텀 레시피 보기</div>
         </R.Go>
       </R.Content>
