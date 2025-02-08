@@ -22,6 +22,10 @@ const RecipeMaker = () => {
     navigate(`/customrecipe`);
   };
 
+  const gome = () => {
+    navigate(`/me`);
+  };
+
   const [isTooltipVisible, setIsTooltipVisible] = useState(false);
 
   const toggleTooltip = () => {
@@ -138,7 +142,7 @@ const RecipeMaker = () => {
             />
             <div>작성</div>
           </R.Write>
-          <R.Me>
+          <R.Me onClick={gome}>
             <img src={`${process.env.PUBLIC_URL}/images/Me.svg`} alt="나" />
             <div>내정보</div>
           </R.Me>

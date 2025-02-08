@@ -5,6 +5,7 @@ import Main from "./pages/Main";
 import RecipeMaker from "./pages/RecipeMake";
 import Customrecipe from "./pages/CustomRec";
 import Recipedet from "./pages/RecipeDet";
+import Me from "./pages/Me";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/recipemaker" element={<RecipeMaker />} />
         <Route path="/customrecipe" element={<Customrecipe />} />
         <Route path="/recipedet" element={<Recipedet />} />
+        <Route path="/me" element={<Me />} />
       </Routes>
     </BrowserRouter>
   );
